@@ -39,12 +39,6 @@ void pall(stack_t **stack, unsigned int line_number)
 	if (line_number == 0)
 		return;
 
-    if (*stack == NULL)
-    {
-        fprintf(stderr, "Stack is empty.\n");
-        return;
-    }
-
     head = *stack;
     current = head;
 
