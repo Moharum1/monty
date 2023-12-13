@@ -35,19 +35,22 @@ int main(int argc, char **argv)
 	}
 	while ((line = readLine(file)) != NULL)
 	{
-		tokens = CreateCommandArray(line, delim);	
-		for (inst = instructions; inst->opcode != NULL; inst++)
+		if (strcmp(line," ") != 0)
 		{
-			if (strcmp(inst->opcode, tokens[0]) == 0)
+			tokens = CreateCommandArray(line, delim);	
+			for (inst = instructions; inst->opcode != NULL; inst++)
 			{
-				if (tokens[1] != NULL)
-					global_int = atoi(tokens[1]);
+				if (strcmp(inst->opcode, tokens[0]) == 0)
+				{
+					if (tokens[1] != NULL)
+						global_int = atoi(tokens[1]);
 
-				inst->f(&stack, counter);
-				break;
+					inst->f(&stack, counter);
+					break;
+				}
 			}
-		}
 		counter++;
+		}
 		freeTokens(tokens, getStringArraySize(tokens));
 		free(line);
 	}
