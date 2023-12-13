@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include<stdbool.h>
+#include <ctype.h>
 #include <string.h>
 
 /**
@@ -60,6 +61,7 @@ void sub(stack_t **stack, unsigned int line_number);
 void divide(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t **head);
 
 extern int global_int;
