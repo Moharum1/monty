@@ -17,7 +17,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 
     while (head != NULL)
     {
-        if (head->n == 0)
+        if (head->n == 0 || head->n > 127)
             break;
 
         *string = (char)head->n;
