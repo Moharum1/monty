@@ -11,6 +11,7 @@ instruction_t instructions[] = {
 	{"nop", nop},
 	{"sub", sub},
 	{"div", divide},
+	{"mul", mul},
 	{NULL, NULL}
 };
 
