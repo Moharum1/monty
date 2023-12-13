@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	delim = " ";
-	counter = 0;
+	counter = 1;
 
 	file = fopen(argv[1], "r");
 	if (file == NULL)
@@ -49,6 +49,13 @@ int main(int argc, char **argv)
 					break;
 				}
 			}
+
+			if (!checkForOp(tokens[0]))
+			{
+				fprintf(stderr, "L%d: unknown instruction %s\n", counter, line);
+				exit(EXIT_FAILURE);
+			}
+
 		counter++;
 		}
 		freeTokens(tokens, getStringArraySize(tokens));
@@ -57,4 +64,18 @@ int main(int argc, char **argv)
 	fclose(file);
 	free_stack(&stack);
 	return (0);
+}
+
+bool checkForOp(char *op)
+{
+	instruction_t *inst;
+	for (inst = instructions; inst->opcode != NULL; inst++)
+	{
+		if (strcmp(inst->opcode, op) == 0)
+		{
+			return true;
+		}
+	}
+
+	return false;
 }

@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include<stdbool.h>
 #include <string.h>
 
 /**
@@ -46,6 +47,7 @@ void freeTokens(char **tokens, int tokenCount);
 int getStringArraySize(char **array);
 char* readLine(FILE* file);
 char* _strdup(const char* source);
+bool checkForOp(char *op);
 
 void pall(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
