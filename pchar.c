@@ -18,4 +18,6 @@ void pchar(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
     }
     printf("%c\n", (char)head->n);
+
+    pop(stack, line_number);
 }
