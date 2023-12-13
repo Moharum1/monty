@@ -1,0 +1,4 @@
+#!/bin/bash
+git add .
+git commit -m "task done"
+git push
