@@ -1,6 +1,5 @@
 #include "monty.h"
 
-
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new;
@@ -8,7 +7,7 @@ void push(stack_t **stack, unsigned int line_number)
 	
 	if (global_int == 0)
 	{
-		printf("L%d: usage: push integer\n",line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -16,7 +15,7 @@ void push(stack_t **stack, unsigned int line_number)
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		perror("Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 
@@ -43,7 +42,7 @@ void pall(stack_t **stack, unsigned int line_number)
 
     if (*stack == NULL)
     {
-        printf("Stack is empty.\n");
+        fprintf(stderr, "Stack is empty.\n");
         return;
     }
 

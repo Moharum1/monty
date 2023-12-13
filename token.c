@@ -26,7 +26,7 @@ char **CreateCommandArray(char *command, char *delim)
 
 	if (tokens == NULL)
 	{
-		perror("Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 
@@ -39,7 +39,7 @@ char **CreateCommandArray(char *command, char *delim)
 
 		if (tokens[i] == NULL)
 		{
-			perror("Error: malloc failed");
+			fprintf(stderr, "Error: malloc failed\n");
 			exit(EXIT_FAILURE);
 		}
 		token = strtok(NULL, delim);
@@ -102,7 +102,7 @@ char* readLine(FILE* file) {
         if (line != NULL) {
             strcpy(line, buffer);
         } else {
-            perror("Error: malloc failed");
+            fprintf(stderr, "Error: malloc failed\n");
             exit(EXIT_FAILURE);
         }
     }
@@ -124,7 +124,7 @@ char* _strdup(const char* source){
     if (destination != NULL) {
         strcpy(destination, source);
     } else {
-        perror("Error: malloc failed");
+        fprintf(stderr, "Error: malloc failed\n");
         exit(EXIT_FAILURE);
     }
 
