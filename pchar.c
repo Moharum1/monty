@@ -12,11 +12,11 @@ void pchar(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-    if (head->n < 0 || head->n > 127)
+    if (head->n <= 31 || head->n > 127)
     {
         fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
 		exit(EXIT_FAILURE);
     }
 
-    printf("%c\n", (char)head->n);
+    printf("%c\n", head->n);
 }
