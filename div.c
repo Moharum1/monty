@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void mod(stack_t **stack, unsigned int line_number)
+void divide(stack_t **stack, unsigned int line_number)
 {
 	stack_t *head;
     stack_t *old;
