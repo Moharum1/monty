@@ -4,8 +4,8 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new;
 	stack_t *head;
-	
-	if (global_int == 0)
+
+	if (global_int < 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
@@ -38,7 +38,6 @@ void pall(stack_t **stack, unsigned int line_number)
 
 	if (line_number == 0)
 		return;
-
 
     if (*stack == NULL)
     {

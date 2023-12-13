@@ -7,7 +7,7 @@ instruction_t instructions[] = {
 	{NULL, NULL}
 };
 
-int global_int = 0;
+int global_int;
 
 int main(int argc, char **argv)
 {
