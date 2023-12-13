@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void mod(stack_t **stack, unsigned int line_number)
+void divide(stack_t **stack, unsigned int line_number)
 {
 	stack_t *head;
     stack_t *old;
@@ -9,7 +9,7 @@ void mod(stack_t **stack, unsigned int line_number)
 
     if (head == NULL)
 	{
-		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
@@ -17,7 +17,7 @@ void mod(stack_t **stack, unsigned int line_number)
 
     if (old == NULL)
     {
-		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
     }
 
@@ -27,6 +27,6 @@ void mod(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
     }
 
-    old->n = old->n / head->n;
+    old->n = old->n % head->n;
     pop(stack, line_number);
 }
